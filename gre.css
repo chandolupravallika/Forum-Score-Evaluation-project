@@ -1,0 +1,13 @@
+h1 
+{
+background-image: url("siuc.jpg");
+text-align: center;
+font-size: 60px;
+padding-top: 30px;
+padding-right: 10px;
+padding-bottom: 40px;
+padding-left: 80px;
+color:white;
+
+h1.outset {border-style: outset;}
+}

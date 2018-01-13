@@ -1,0 +1,21 @@
+create table users(user_id int NOT NULL AUTO_INCREMENT,username varchar(16),password varchar(64),PRIMARY KEY (user_id,username));
+
+create table categories(cat_id int AUTO_INCREMENT,category_title varchar(64),PRIMARY KEY (cat_id));
+
+create table subcategories(subcat_id int AUTO_INCREMENT,parent_id int,subcategory_title varchar(128),subcategory_desc varchar(255),PRIMARY KEY (subcat_id), INDEX (parent_id));
+
+create table topics(topic_id int AUTO_INCREMENT,category_id int,subcategory_id int,author varchar(16),title varchar(128),content text,date_posted DATE,views int NOT NULL,replies int NOT NULL,view int NOT NULL,replie int NOT NULL, PRIMARY KEY (topic_id),INDEX (category_id),INDEX(subcategory_id));
+
+create table replies(reply_id int AUTO_INCREMENT,category_id int,subcategory_id int,topic_id int,author varchar(16),comment text,date_posted date,PRIMARY KEY (reply_id),INDEX (category_id),INDEX (subcategory_id),INDEX(topic_id));
+
+alter table topics add foreign key(category_id) references categories(cat_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+alter table topics add FOREIGN KEY(subcategory_id) REFERENCES subcategories(subcat_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+alter table replies ADD FOREIGN KEY(category_id) REFERENCES categories(cat_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE replies ADD FOREIGN KEY(subcategory_id) REFERENCES subcategories(subcat_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE replies ADD FOREIGN KEY(topic_id) REFERENCES topics(topic_id) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ alter table subcategories add foreign key(parent_id) references categories(cat_id) on delete restrict on update restrict;

@@ -1,0 +1,61 @@
+<html>
+<head>
+</head>
+<body>
+<div class="loginpane">
+    <form action = "" method="post">
+   <!-- grescore1.php-->
+   <?php echo $message; ?>
+
+<!-- A borderless table of text widgets for name and address -->
+
+      <table align="center">
+        <tr>
+          <td> GRE Score: </td>  
+          <td> <input type = "text"  name = "gre" id="gre"
+                      size = "30" 
+                       />
+          </td>
+        </tr>
+        <tr>
+          <td> IELTES Score: </td>
+          <td> <input type = "text"  name = "IELTES"  
+                      id = "IELTES"
+                      size = "30" />
+          </td>
+        </tr>
+
+        <tr> 
+          <td> cgpa :</td>
+          <td> <input type = "text"  name = "cgpa"  
+                      id = "cgpa"  size = "30" />
+          </td>
+        </tr>
+   
+      </table> 
+        
+<!-- The submit and reset buttons -->
+
+      <p align="center">
+        <input type = "submit"  value = "Submit" />
+        <input type = "reset"  value = "Clear" />
+      </p>
+    </form>
+    </div>
+
+<br><br><br>
+<div class="display">
+
+</div>
+</body>
+</html>
+<?php    
+if(isset($_POST['Submit']))
+{ 
+//check if form was submitted
+  $cgpa = $_POST['cgpa']; 
+  //get input text
+  $message = "Success! You entered: ".$cgpa;
+  echo "hello";
+}    
+?>

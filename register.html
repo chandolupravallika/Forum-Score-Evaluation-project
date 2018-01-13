@@ -1,0 +1,40 @@
+<html>
+<head><title>SIUC Forum</title>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script language="javascript">
+  uname=document.getElementById("usernameinput").value;
+  	if(uname == "") {
+		
+		document.getElementById("uiname").innerHTML = "username is mandatory";
+		
+	}
+  </script>
+ </head>
+<link href="/forum/styles/main.css" type="text/css" rel="stylesheet" />
+<body>
+	<div class="pane">
+		<div class="header"><h1><a href="/forum">SIUC Forum</a></h1></div>
+		<div class="loginpane">
+			<form action="addnewuser.php" method="POST">
+			<!--addnewuser.php-->
+				<p>Username:</p>
+				<input type="text" id="usernameinput" name="usernameinput" required />
+				<p id="uiname"></p> 
+				<p>Password:</p>
+				<input type="password" id="passwordinput" name="passwordinput" required />
+				<input type="submit" value="Register" />
+			</form>
+		</div>
+		<div class="forumdesc">
+			<p>Welcome to SIUC Forum</p>
+		</div>
+		<div class="content">
+			
+		</div>
+	</div>
+</body>
+</html>
